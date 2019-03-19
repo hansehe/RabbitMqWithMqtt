@@ -1,0 +1,26 @@
+version: "3"
+
+services:
+  rabbitmq-service:
+    image: ${IMAGE_REPO}rabbitmq-service:${VERSION}
+    hostname: rabbitmq-service
+    ports:
+      - 5672:5672
+      - 15672:15672
+      - 15675:15675
+    environment:
+      RABBITMQ_DEFAULT_USER: ${RABBITMQ_USERNAME}
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_PASSWORD}
+    networks:
+      - backend_network
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+networks:
+  backend_network:
+
+volumes:
+  rabbitmq_data:

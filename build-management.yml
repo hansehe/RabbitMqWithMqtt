@@ -1,0 +1,26 @@
+changelog:
+    file: CHANGELOG.md
+    envKey: VERSION
+
+run:
+    selections:
+        rabbitMq:
+            directory: src
+            files:
+                - docker-compose.yml
+
+build:
+    selections:
+        rabbitMq:
+            directory: src
+            additionalTag: latest
+            files:
+                - docker-compose.yml
+
+publish:
+    selections:
+        rabbitMq:
+            directory: src
+            additionalTag: latest
+            files:
+                - docker-compose.yml
