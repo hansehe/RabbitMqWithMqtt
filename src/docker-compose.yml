@@ -2,7 +2,7 @@ version: "3"
 
 services:
   rabbitmq-service:
-    image: ${IMAGE_REPO}rabbitmq-service:${VERSION}
+    image: ${IMAGE_REPO}rabbitmq-mqtt:${VERSION}
     hostname: rabbitmq-service
     ports:
       - 5672:5672
