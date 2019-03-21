@@ -2,13 +2,6 @@ changelog:
     file: CHANGELOG.md
     envKey: VERSION
 
-run:
-    selections:
-        rabbitMq:
-            directory: src
-            files:
-                - docker-compose.yml
-
 build:
     selections:
         rabbitMq:
@@ -24,3 +17,10 @@ publish:
             additionalTag: latest
             files:
                 - docker-compose.yml
+
+swarm:
+    selections:
+        rabbitMq:
+            directory: src
+            files:
+                - swarm-management.yml

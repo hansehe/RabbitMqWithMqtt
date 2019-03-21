@@ -122,5 +122,5 @@ __pycache__/
 .vscode/
 .idea/
 
-docker-compose.publish.*.yml
-docker-compose.build.*.yml
+src/docker-compose.publish.*.yml
+src/docker-compose.build.*.yml
