@@ -2,8 +2,9 @@
 
 1. `pip install DockerBuildManagement`
 2. Build: `dbm -build`
-3. Without ssl: `dbm -run`
-4. With ssl: `dbm -swarm -start`
+3. Run in swarm: `dbm -swarm -start`
+4. Login to rabbitmq management ui (amqp/amqp): https://localhost:15672
+5. Stop services: `dbm -swarm -stop`
 
 ## Buildsystem:
 - [DockerBuildManagement](https://github.com/DIPSAS/DockerBuildManagement/blob/master/README.md)
