@@ -7,6 +7,7 @@ build:
         rabbitMq:
             directory: src
             additionalTag: latest
+            composeFileWithDigests: docker-compose.digest.yml
             files:
                 - docker-compose.yml
 
@@ -15,6 +16,7 @@ publish:
         rabbitMq:
             directory: src
             additionalTag: latest
+            composeFileWithDigests: docker-compose.digest.yml
             files:
                 - docker-compose.yml
 
