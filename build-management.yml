@@ -4,16 +4,23 @@ changelog:
 
 build:
     selections:
-        rabbitMq:
+        service:
             directory: src
             additionalTag: latest
             composeFileWithDigests: docker-compose.digest.yml
             files:
                 - docker-compose.yml
 
+run:
+    selections:
+        service:
+            directory: src
+            files:
+                - docker-compose.yml
+
 publish:
     selections:
-        rabbitMq:
+        service:
             directory: src
             additionalTag: latest
             composeFileWithDigests: docker-compose.digest.yml
@@ -22,7 +29,7 @@ publish:
 
 swarm:
     selections:
-        rabbitMq:
+        service:
             directory: src
             files:
                 - swarm-management.yml

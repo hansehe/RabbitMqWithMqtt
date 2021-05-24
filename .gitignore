@@ -124,5 +124,6 @@ __pycache__/
 
 src/docker-compose.publish.*.yml
 src/docker-compose.build.*.yml
+src/docker-compose.run.*.yml
 src/docker-compose.digest.*.yml
 src/docker-compose.digest.yml
