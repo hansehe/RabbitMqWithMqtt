@@ -13,7 +13,7 @@ build:
         service_arm64:
             directory: src
             additionalTag: latest-arm64
-            composeFileWithDigests: docker-compose.digest.yml
+            composeFileWithDigests: docker-compose.digest.arm64.yml
             files:
                 - docker-compose.arm64.yml
 
@@ -39,7 +39,7 @@ publish:
         service_arm64:
             directory: src
             additionalTag: latest-arm64
-            composeFileWithDigests: docker-compose.digest.yml
+            composeFileWithDigests: docker-compose.digest.arm64.yml
             files:
                 - docker-compose.arm64.yml
 
