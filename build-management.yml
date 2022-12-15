@@ -10,6 +10,12 @@ build:
             composeFileWithDigests: docker-compose.digest.yml
             files:
                 - docker-compose.yml
+        service_arm64:
+            directory: src
+            additionalTag: latest
+            composeFileWithDigests: docker-compose.digest.yml
+            files:
+                - docker-compose.arm64.yml
 
 run:
     selections:
@@ -17,6 +23,10 @@ run:
             directory: src
             files:
                 - docker-compose.yml
+        service_arm64:
+            directory: src
+            files:
+                - docker-compose.arm64.yml
 
 publish:
     selections:
@@ -26,6 +36,12 @@ publish:
             composeFileWithDigests: docker-compose.digest.yml
             files:
                 - docker-compose.yml
+        service_arm64:
+            directory: src
+            additionalTag: latest
+            composeFileWithDigests: docker-compose.digest.yml
+            files:
+                - docker-compose.arm64.yml
 
 swarm:
     selections:

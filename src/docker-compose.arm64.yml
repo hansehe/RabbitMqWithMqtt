@@ -1,0 +1,50 @@
+version: "3.4"
+
+services:
+  rabbitmq-service:
+    image: ${IMAGE_REPO}rabbitmq-mqtt:${VERSION}-arm64
+    hostname: rabbitmq-service
+    ports:
+      - 5671:5671 # ssl amqp
+      - 5672:5672 # normal amqp
+      - 15672:15672 # ssl/normal management
+      - 15673:15673 # ssl websocket mqtt
+      - 15675:15675 # normal websocket mqtt
+      - 1883:1883 # normal tcp mqtt
+      - 8883:8883 # ssl tcp mqtt
+    secrets:
+      - site.crt
+      - site.ca
+      - site.key
+    configs:
+      - source: rabbitmq.ssl.conf
+        target: /etc/rabbitmq/rabbitmq.conf
+    environment:
+      RABBITMQ_NODENAME: rabbit
+    networks:
+      - backend_network
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+    build:
+      context: .
+      dockerfile: arm64.Dockerfile
+
+networks:
+  backend_network:
+    external: true
+
+secrets:
+  site.crt:
+    external: true
+  site.ca:
+    external: true
+  site.key:
+    external: true
+
+configs:
+  rabbitmq.ssl.conf:
+    external: true
+
+volumes:
+  rabbitmq_data:
+    external: true
