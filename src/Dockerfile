@@ -1,4 +1,4 @@
-FROM rabbitmq:3.11.5-management
+FROM rabbitmq:3.13.3-management
 
 RUN rabbitmq-plugins enable rabbitmq_mqtt
 RUN rabbitmq-plugins enable rabbitmq_web_mqtt

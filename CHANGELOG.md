@@ -1,6 +1,9 @@
 # Changelog
 
 <!-- the topmost header is current version -->
+### Version 1.1.3 2026-01-13
+ - Updated rabbitmq
+
 ### Version 1.1.2 2022-12-15
  - Updated rabbitmq
 
